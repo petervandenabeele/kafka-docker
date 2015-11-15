@@ -6,7 +6,7 @@ ENV KAFKA_VERSION="0.8.2.2" SCALA_VERSION="2.11"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y unzip wget curl git jq
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y unzip wget curl git jq docker.io
 
 ADD download-kafka.sh /tmp/download-kafka.sh
 RUN /tmp/download-kafka.sh
