@@ -1,14 +1,16 @@
 kafka-docker
 ============
 
-Dockerfile for [Apache Kafka](http://kafka.apache.org/)
+Based on [kafka-docker by Wurstmeister](https://github.com/wurstmeister/kafka-docker).
 
-The image is available directly from https://registry.hub.docker.com/
+Updated and adapted for running properly on my Mac OS X.
+
+Dockerfile for [Apache Kafka](http://kafka.apache.org/)
 
 ##Pre-Requisites
 
 - install docker-compose [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
-- modify the ```KAFKA_ADVERTISED_HOST_NAME``` in ```docker-compose.yml``` to match your docker host IP (Note: Do not use localhost or 127.0.0.1 as the host ip if you want to run multiple brokers.)
+- modify the ```KAFKA_ADVERTISED_HOST_NAME``` in ```docker-compose.yml``` to match your docker host IP (Note: Do not use localhost or 127.0.0.1 as the host ip if you want to run multiple brokers.)  (find this with `docker-compose ip default`)
 - if you want to customise any Kafka parameters, simply add them as environment variables in ```docker-compose.yml```, e.g. in order to increase the ```message.max.bytes``` parameter set the environment to ```KAFKA_MESSAGE_MAX_BYTES: 2000000```. To turn off automatic topic creation set ```KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'```
 
 ##Usage
@@ -52,6 +54,3 @@ Here is an example snippet from ```docker-compose.yml```:
 ##Tutorial
 
 [http://wurstmeister.github.io/kafka-docker/](http://wurstmeister.github.io/kafka-docker/)
-
-
-
