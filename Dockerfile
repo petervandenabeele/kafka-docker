@@ -1,10 +1,10 @@
-FROM ubuntu:trusty
+FROM petervandenabeele/ubuntu-java8
 
 MAINTAINER petervandenabeele
 
-ENV KAFKA_VERSION="0.8.2.1" SCALA_VERSION="2.10"
+ENV KAFKA_VERSION="0.8.2.2" SCALA_VERSION="2.11"
 
-RUN apt-get update && apt-get install -y unzip openjdk-6-jdk wget curl git docker.io jq
+RUN apt-get update && apt-get install -y unzip wget curl git jq
 
 ADD download-kafka.sh /tmp/download-kafka.sh
 RUN /tmp/download-kafka.sh
